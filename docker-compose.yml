@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  front:
+    build: .
+    # networks:
+    #   - cat-empire
+    ports:
+      - '${EXPOSED_PORT:-3000}:3000'
+
+networks:
+  cat-empire:
+    external: true
+    name: cat-empire-network
